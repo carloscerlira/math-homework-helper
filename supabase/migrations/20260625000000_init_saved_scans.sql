@@ -26,3 +26,7 @@ create policy "saved_scans are accessible to anon (local demo)"
   for all
   using (true)
   with check (true);
+
+-- RLS controls row visibility, but the API roles still need table privileges.
+grant usage on schema public to anon, authenticated;
+grant select, insert, update, delete on public.saved_scans to anon, authenticated;

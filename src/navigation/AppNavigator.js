@@ -8,6 +8,7 @@ import SavedScreen from '../screens/SavedScreen';
 import LearnScreen from '../screens/LearnScreen';
 import QuizScreen from '../screens/QuizScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import DbTestScreen from '../screens/DbTestScreen';
 import { SavedProvider } from '../context/SavedContext';
 import { useTheme } from '../context/ThemeContext';
 import { typography } from '../theme/colors';
@@ -20,6 +21,7 @@ const TAB_ICONS = {
   Learn:     { active: '📖', inactive: '📕' },
   Quiz:      { active: '⚡', inactive: '⚡' },
   Settings:  { active: '⚙️', inactive: '⚙️' },
+  DbTest:    { active: '🧪', inactive: '🧪' },
 };
 
 function TabIcon({ name, focused, colors }) {
@@ -82,6 +84,7 @@ export default function AppNavigator() {
           <Tab.Screen name="Learn"     component={LearnScreen} />
           <Tab.Screen name="Quiz"      component={QuizScreen} />
           <Tab.Screen name="Settings"  component={SettingsScreen} />
+          <Tab.Screen name="DbTest"    component={DbTestScreen} options={{ tabBarLabel: 'DB Test' }} />
         </Tab.Navigator>
       </NavigationContainer>
     </SavedProvider>
