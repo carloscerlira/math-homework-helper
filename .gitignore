@@ -41,3 +41,6 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Allow the documented example env to be committed
+!.env.example
